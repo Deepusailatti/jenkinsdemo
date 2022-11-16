@@ -11,7 +11,7 @@ pipeline {
     stage ('Publish to DockerHub') {
       steps {
         withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
-          sh 'docker tag jenkins-pipeline deepusai/jenkins:""$GIT_COMMIT""'
+          sh 'docker tag jenkins-pipeline deepusai/jenkinslatest'
           sh 'docker push deepusai/jenkins:""$GIT_COMMIT""
          }
        }
