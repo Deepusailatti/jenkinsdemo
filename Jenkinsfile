@@ -9,7 +9,7 @@ pipeline {
     }
      stage ('Publish to DockerHub') {
       steps {
-        withDockerRegistry([credentialsId: "docker-hub", url: "https://hub.docker.com"]) {
+        withDockerRegistry([credentialsId: "docker-hub"]) {
           sh 'docker push public.ecr.aws/b2i5j8y5/jenkins-pipeline:latest'
          }
        }
