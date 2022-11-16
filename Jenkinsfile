@@ -12,7 +12,7 @@ pipeline {
       steps {
         withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
           sh 'docker tag jenkins-pipeline deepusai/jenkinslatest'
-          sh 'docker push deepusai/jenkins-1'
+          sh 'docker push deepusai/jenkinslatest'
          }
        }
      }
