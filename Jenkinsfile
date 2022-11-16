@@ -4,6 +4,7 @@ pipeline {
     stage ('Build') {
       steps {
         sh 'printenv'
+        sh 'docker build -t public.ecr.aws/b2i5j8y5/jenkins-pipeline:latest .'
       }
     }
     
