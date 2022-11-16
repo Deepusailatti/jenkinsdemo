@@ -7,6 +7,14 @@ pipeline {
         sh 'docker build -t jenkins-pipeline .'
       }
     }
+     stage ('Publish to DockerHub') {
+      steps {
+        withDockerRegistry([credentialsId: "docker-hub", url: "https://hub.docker.com/"]) {
+          sh 'docker push public.ecr.aws/b2i5j8y5/jenkins-pipeline:latest'
+         }
+       }
+     }
+ 
     stage ('Publish to ECR') {
       steps {
         //sh 'aws ecr-public get-login-password --region eu-west-2 | docker login --username AWS --password-stdin public.ecr.aws/t7e2c6o4'
