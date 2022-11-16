@@ -4,9 +4,18 @@ pipeline {
     stage ('Build') {
       steps {
         sh 'printenv'
-        sh 'docker build -t jenkins-pipeline .'
+        sh 'docker build -t jenkins-pipeline:""$GIT_COMMIT"" .'
       }
     }
+    
+    stage ('Publish to DockerHub') {
+      steps {
+        withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
+          sh 'docker push public.ecr.aws/b2i5j8y5/jenkins-pipeline:""$GIT_COMMIT""'
+         }
+       }
+     }
+ 
      
     stage ('Publish to ECR') {
       steps {
@@ -16,7 +25,7 @@ pipeline {
           sh 'docker login -u AWS -p $(aws ecr-public get-login-password --region us-east-1) public.ecr.aws/b2i5j8y5' //985729960198.dkr.ecr.eu-west-2.amazonaws.com'
           sh 'docker build -t jenkins-pipeline .'
           sh 'docker tag jenkins-pipeline:latest public.ecr.aws/b2i5j8y5/jenkins-pipeline:""$BUILD""'
-          sh 'docker push public.ecr.aws/b2i5j8y5/jenkins-pipeline:""$BUILD""'
+          sh 'docker push public.ecr.aws/b2i5j8y5/jenkins-pipeline:latest'
          }
        }
     }
