@@ -4,8 +4,7 @@ pipeline {
   AWS_ACCOUNT_ID="715196779724"
   AWS_DEFAULT_REGION="dkr.ecr.us-east-1"
   IMAGE_REPO_NAME="jenkins-test"
-  IMAGE_TAG="latest
- 715196779724.dkr.ecr.us-east-1.amazonaws.com/jenkins-test= “${715196779724}.dkr.ecr.${us-east-1}.amazonaws.com/${jjenkins-test}"
+  IMAGE_TAG="latest 715196779724.dkr.ecr.us-east-1.amazonaws.com/jenkins-test= “${715196779724}.dkr.ecr.${us-east-1}.amazonaws.com/${jenkins-test}"
 }
   stages {
     stage ('Build') {
