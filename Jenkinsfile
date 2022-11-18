@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh 'printenv'
         //sh 'docker build -t jenkins-test:latest .'
-        sh 'docker build -t jenkins-test:""$GIT_COMMIT"" .'
+        sh 'docker build -t deepusai/jenkins-test:""$GIT_COMMIT"" .'
       }
     }
     
