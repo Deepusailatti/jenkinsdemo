@@ -15,7 +15,8 @@ pipeline {
           //sh 'docker tag jenkins-test:""$GIT_COMMIT""715196779724.dkr.ecr.us-east-1.amazonaws.com/jenkins-test:""$GIT_COMMIT""'
           sh 'docker tag jenkins-test:latest 715196779724.dkr.ecr.us-east-1.amazonaws.com/jenkins-test:""$GIT_COMMIT""'
           //sh 'docker image push jenkins-test:715196779724.dkr.ecr.us-east-1.amazonaws.com/jenkins-test:""$GIT_COMMIT""'
-          sh 'docker push 715196779724.dkr.ecr.us-east-1.amazonaws.com/jenkins-test:""$GIT_COMMIT""'
+          //sh 'docker push 715196779724.dkr.ecr.us-east-1.amazonaws.com/jenkins-test:""$GIT_COMMIT""'
+          sh 'docker push jenkins-test:""$GIT_COMMIT""'
          }
        }
      }
