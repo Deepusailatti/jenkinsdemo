@@ -4,15 +4,17 @@ pipeline {
     stage ('Build') {
       steps {
         sh 'printenv'
-        sh 'docker build -t jenkins-test:latest .'
+        //sh 'docker build -t jenkins-test:latest .'
+        sh 'docker build jenkins-test:""$GIT_COMMIT""'
       }
     }
     
     stage ('Publish to DockerHub') {
       steps {
         withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
-          sh 'docker tag jenkins-test:latest 715196779724.dkr.ecr.us-east-1.amazonaws.com/jenkins-test:""$GIT_COMMIT""'
-          sh 'docker image push jenkins-test:715196779724.dkr.ecr.us-east-1.amazonaws.com/jenkins-test:""$GIT_COMMIT""'
+          sh 'docker tag jenkins-test:""$GIT_COMMIT""715196779724.dkr.ecr.us-east-1.amazonaws.com/jenkins-test:""$GIT_COMMIT""'
+          //sh 'docker image push jenkins-test:715196779724.dkr.ecr.us-east-1.amazonaws.com/jenkins-test:""$GIT_COMMIT""'
+          sh 'docker push 715196779724.dkr.ecr.us-east-1.amazonaws.com/715196779724:""$GIT_COMMIT""'
          }
        }
      }
