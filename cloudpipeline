@@ -1,0 +1,122 @@
+{
+   "artifactsOverride": { 
+      "artifactIdentifier": "export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain testdemo --domain-owner 171127580732 --region us-east-2 --query authorizationToken --output text",
+      "bucketOwnerAccess": "VPC (ID: vpc-0ddc51eafd98fde61)",
+      "encryptionDisabled": boolean,
+      "location": "string",
+      "name": "Test",
+      "namespaceType": "string",
+      "overrideArtifactName": boolean,
+      "packaging": "string",
+      "path": "string",
+      "type": "string"
+   },
+   "buildBatchConfigOverride": { 
+      "batchReportMode": "string",
+      "combineArtifacts": boolean,
+      "restrictions": { 
+         "computeTypesAllowed": [ "string" ],
+         "maximumBuildsAllowed": number
+      },
+      "serviceRole": "string",
+      "timeoutInMins": number
+   },
+   "buildspecOverride": "string",
+   "buildTimeoutInMinutesOverride": number,
+   "cacheOverride": { 
+      "location": "string",
+      "modes": [ "string" ],
+      "type": "string"
+   },
+   "certificateOverride": "string",
+   "computeTypeOverride": "string",
+   "debugSessionEnabled": boolean,
+   "encryptionKeyOverride": "string",
+   "environmentTypeOverride": "string",
+   "environmentVariablesOverride": [ 
+      { 
+         "name": "string",
+         "type": "string",
+         "value": "string"
+      }
+   ],
+   "gitCloneDepthOverride": number,
+   "gitSubmodulesConfigOverride": { 
+      "fetchSubmodules": boolean
+   },
+   "idempotencyToken": "string",
+   "imageOverride": "string",
+   "imagePullCredentialsTypeOverride": "string",
+   "insecureSslOverride": boolean,
+   "logsConfigOverride": { 
+      "cloudWatchLogs": { 
+         "groupName": "string",
+         "status": "string",
+         "streamName": "string"
+      },
+      "s3Logs": { 
+         "bucketOwnerAccess": "string",
+         "encryptionDisabled": boolean,
+         "location": "string",
+         "status": "string"
+      }
+   },
+   "privilegedModeOverride": boolean,
+   "projectName": "string",
+   "queuedTimeoutInMinutesOverride": number,
+   "registryCredentialOverride": { 
+      "credential": "string",
+      "credentialProvider": "string"
+   },
+   "reportBuildBatchStatusOverride": boolean,
+   "secondaryArtifactsOverride": [ 
+      { 
+         "artifactIdentifier": "string",
+         "bucketOwnerAccess": "string",
+         "encryptionDisabled": boolean,
+         "location": "string",
+         "name": "string",
+         "namespaceType": "string",
+         "overrideArtifactName": boolean,
+         "packaging": "string",
+         "path": "string",
+         "type": "string"
+      }
+   ],
+   "secondarySourcesOverride": [ 
+      { 
+         "auth": { 
+            "resource": "string",
+            "type": "string"
+         },
+         "buildspec": "string",
+         "buildStatusConfig": { 
+            "context": "string",
+            "targetUrl": "string"
+         },
+         "gitCloneDepth": number,
+         "gitSubmodulesConfig": { 
+            "fetchSubmodules": boolean
+         },
+         "insecureSsl": boolean,
+         "location": "string",
+         "reportBuildStatus": boolean,
+         "sourceIdentifier": "string",
+         "type": "string"
+      }
+   ],
+   "secondarySourcesVersionOverride": [ 
+      { 
+         "sourceIdentifier": "string",
+         "sourceVersion": "string"
+      }
+   ],
+   "serviceRoleOverride": "string",
+   "sourceAuthOverride": { 
+      "resource": "string",
+      "type": "string"
+   },
+   "sourceLocationOverride": "string",
+   "sourceTypeOverride": "string",
+   "sourceVersion": "string"
+}
